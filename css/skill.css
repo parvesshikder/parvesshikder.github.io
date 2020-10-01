@@ -1,0 +1,45 @@
+.skillLogo{
+    display: grid;
+    grid-gap: 20px;
+    grid-template-columns: repeat(3,1fr);
+    padding-top: 150px;
+}
+.small-device-show{
+   margin-top: -130px;
+}
+.fa-html5{
+    color: #E44D26;
+}
+.fa-css3-alt{
+    color: #264DE4;
+}
+.fa-sass{
+    color: #CC6699;
+}
+.fa-bootstrap{
+    color: #563D7C;
+}
+.fa-js{
+    color: #F7DF1E;
+}
+.fa-react{
+    color: #00D8FF;
+}
+.fa-wordpress{
+    color: #464646;
+}
+.fa-php{
+   color: #556594; 
+}
+.fa-java{
+    color: #5382A1;
+}
+.fa-git-square{
+    color: #E71B23;
+}
+.fa-git-alt{
+    color: #F05033;
+}
+.fa-gulp{
+    color: #DA4648;
+}

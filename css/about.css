@@ -1,0 +1,29 @@
+.myImage{
+    width: 180px;
+    height: 180px;
+    margin-top: -30px;
+    margin-bottom: 0px;
+    box-shadow: 2px 2px 4px #000000;
+}
+.myDrtailsinfo{
+    width: 600px;
+    text-align: left;
+    color: #E8E8E8;
+    font-size: 1.1rem;
+    opacity: 0.9;
+     text-shadow: 2px 2px 4px #000000;
+}
+@media screen and (min-width: 10px){
+   .myDrtailsinfo{
+        width: 100%;
+        text-align: justify-all;
+    }
+ 
+}
+@media screen and (min-width: 768px){
+   .myDrtailsinfo{
+        width: 70%;
+        text-align: justify-all;
+    }
+ 
+}
