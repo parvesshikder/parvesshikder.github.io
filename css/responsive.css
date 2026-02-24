@@ -159,6 +159,33 @@
     }
 }
 
+/* Tablet landscape: ensure nav items and social icons don't overlap */
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+    .menu {
+        overflow-y: auto;
+    }
+    .menu nav {
+        top: 200px;
+        bottom: 80px;
+        overflow-y: auto;
+    }
+    .social {
+        position: absolute;
+        top: auto;
+        bottom: 40px;
+    }
+    .copyright {
+        position: absolute;
+        bottom: 0;
+        font-size: 9px;
+        padding: 5px 15px;
+    }
+    .menu nav a {
+        padding: 10px 0;
+        font-size: 13px;
+    }
+}
+
 @media screen and (max-width: 768px) {
     body {
         overflow-x: auto;
@@ -170,7 +197,9 @@
         text-shadow: none;
     }
     nav .jspPane {
-        width: 100% !important
+        width: 100% !important;
+        position: relative !important;
+        height: auto !important;
     }
     h2 {
         font-size: 40px;
@@ -178,20 +207,64 @@
     .codrops-top a:nth-child(1) {
         left: 10px;
     }
+    /* Collapsed mobile menu - header bar only */
     .menu {
         position: fixed;
         width: 100%;
-        height: 460px;
+        height: 50px;
+        z-index: 1000;
+        overflow: visible;
     }
     .menu nav {
         top: 50px;
-        bottom: 20px;
+        bottom: auto;
+        display: none;
+    }
+    .menu nav a {
+        display: block;
+        margin: 0;
+        padding: 14px 20px;
+        border-bottom: 1px solid rgba(235,235,235,0.15);
+        font-size: 14px;
+        box-sizing: border-box;
+        width: 100%;
+    }
+    .menu nav a:last-child {
+        border-bottom: none;
+    }
+    /* Expanded mobile nav */
+    nav.active {
+        display: block;
+        overflow-y: auto !important;
+        overflow-x: hidden !important;
+        width: 100% !important;
+        background-color: #000;
+        height: auto !important;
+        max-height: calc(100vh - 50px);
+        -webkit-overflow-scrolling: touch;
+        z-index: 999;
+    }
+    nav.active .jspContainer {
+        background-color: #000;
+        height: auto !important;
+        max-height: calc(100vh - 50px) !important;
+        width: 100% !important;
+        overflow-y: auto !important;
+    }
+    nav.active .jspPane {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    nav.active .jspVerticalBar {
+        display: none;
     }
     .content-scroller {
         position: relative;
         height: auto;
         left: 0;
         overflow: visible;
+        margin-top: 50px;
     }
     .content-wrapper {
         height: auto;
@@ -200,16 +273,16 @@
     }
     .content {
         border: none;
-        width: 768px;
+        width: 100%;
         float: none;
         overflow-y: auto;
+        box-sizing: border-box;
     }
-
     .content:last-child {
-        display: none
+        display: none;
     }
     .logo {
-        margin: 0
+        margin: 0;
     }
     .logo span {
         color: #fff;
@@ -222,9 +295,10 @@
         width: 80%;
         text-align: left;
         padding: 13px 0 13px 15px;
+        line-height: 24px;
     }
     .logo img {
-        display: none
+        display: none;
     }
     .menu-link {
         display: block;
@@ -234,6 +308,7 @@
         height: 25px;
         font-size: 23px;
         color: #FFF;
+        line-height: 1;
     }
     .menu-link:hover {
         color: #999;
@@ -242,41 +317,17 @@
         content: "\f039";
         font-family: 'FontAwesome';
     }
-    .menu nav a {
-        margin: 0 17px
-    }
-    .menu nav a:last-child {
-        border-bottom: none
-    }
-    .menu nav {
-        display: none
-    }
-    nav.active {
-        display: block;
-        overflow: visible !important;
-        width: 100% !important;
-        background-color: #000;
-        height: 400px;
-    }
-    nav.active .jspContainer {
-        background-color: #000;
-        height: 380px !important;
-        width: 100% !important;
-    }
-    .menu {
-        height: 50px
-    }
     .copyright {
-        display: none
+        display: none;
     }
     .social {
-        display: none
+        display: none;
     }
     .grid li {
         width: 100%
     }
     .inner {
-        padding: 130px 40px 60px;
+        padding: 80px 40px 60px;
     }
     .introduction .jspContainer {
         height: 600px !important;
@@ -393,7 +444,7 @@
 
 @media screen and (max-width: 675px) {
     .inner {
-        padding: 130px 30px 40px 30px;
+        padding: 80px 25px 40px 25px;
     }
     .introduction .inner {
         background: url(../images/black-transparent.png) repeat
